@@ -1,5 +1,6 @@
 plugins {
     application
+    jacoco
     id("com.github.ben-manes.versions") version "0.51.0"
 }
 
@@ -15,6 +16,7 @@ repositories {
 }
 
 dependencies {
+    implementation("info.picocli:picocli:4.7.6")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
@@ -22,3 +24,5 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
+tasks.jacocoTestReport {reports {xml.required.set(true)}}
