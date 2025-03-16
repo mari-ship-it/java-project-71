@@ -44,7 +44,7 @@ final class App implements Callable<Integer> {
     public Integer call() {
 
         try {
-            Differ.generate(filePath1, filePath2);
+            System.out.println(Differ.generate(filePath1, filePath2));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
