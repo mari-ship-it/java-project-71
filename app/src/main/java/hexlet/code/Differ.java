@@ -2,15 +2,13 @@ package hexlet.code;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 
-import java.util.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.stream.Stream;
+import java.util.Map;
+import java.util.TreeSet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import javax.naming.ldap.SortKey;
 
 public class Differ {
 
@@ -23,12 +21,13 @@ public class Differ {
         String json2 = Files.readString(path2).trim();
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Map<String, Object> map1 = objectMapper.readValue(json1, new TypeReference<Map<String, Object>>(){});
-        Map<String, Object> map2 = objectMapper.readValue(json2, new TypeReference<Map<String, Object>>(){});
+        Map<String, Object> map1 = objectMapper.readValue(json1, new TypeReference<Map<String, Object>>() { });
+        Map<String, Object> map2 = objectMapper.readValue(json2, new TypeReference<Map<String, Object>>() { });
 
         TreeSet<String> keys = new TreeSet<>(map1.keySet());
         keys.addAll(map2.keySet());
         var sortedKeys = keys.stream().sorted().toList();
+
         StringBuilder genDiff = new StringBuilder();
         genDiff.append("{\n");
 
