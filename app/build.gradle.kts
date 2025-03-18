@@ -19,12 +19,19 @@ repositories {
 dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.13.4.2")
     implementation("info.picocli:picocli:4.7.6")
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
-tasks.test {
+tasks.test{
     useJUnitPlatform()
+    finalizedBy(tasks.jacocoTestReport)
 }
 
-tasks.jacocoTestReport {reports {xml.required.set(true)}}
+tasks.jacocoTestReport {
+    reports {
+        xml.required = true
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir(("jacocoHtml"))
+    }
+}
