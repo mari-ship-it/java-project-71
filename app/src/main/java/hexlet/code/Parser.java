@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-class Utils {
+class Parser {
 
     private static Path getPath(String fileName) {
 
@@ -16,10 +16,8 @@ class Utils {
 
         Path path = getPath(fileName);
         try {
-
             return Files.readString(path).trim();
         } catch (IOException e) {
-
             throw new RuntimeException(e);
         }
     }
