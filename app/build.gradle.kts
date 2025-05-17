@@ -3,7 +3,7 @@ plugins {
     jacoco
     checkstyle
     id("com.github.ben-manes.versions") version "0.51.0"
-    id("org.sonarqube") version "6.0.1.5171"
+    id("org.sonarqube") version "6.2.0.5505"
 }
 
 group = "hexlet.code"
@@ -35,7 +35,7 @@ tasks.jacocoTestReport { reports { xml.required.set(true) } }
 
 sonar {
     properties {
-        property("sonar.projectKey", "mari-ship-it_java-project-71")
+        property("sonar.projectKey", "mari-ship-it_java-project-712")
         property("sonar.organization", "mari-ship-it")
         property("sonar.host.url", "https://sonarcloud.io")
     }
