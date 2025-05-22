@@ -13,6 +13,7 @@ public class PlainFormatter {
         StringBuilder stringBuilder = new StringBuilder();
 
         compareResult.forEach(items -> {
+
             TypeStatus type  = items.getStatus();
             String key = items.getKey();
             Object value = isCondition(items.getValue());
