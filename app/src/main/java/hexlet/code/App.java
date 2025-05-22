@@ -17,12 +17,12 @@ import java.util.concurrent.Callable;
 final class App implements Callable<Integer> {
 
     @Parameters(index = "0",
-            paramLabel = "filepath1",
+            paramLabel = "filePath1",
             description = "path to first file")
     private String filePath1;
 
     @Parameters(index = "1",
-            paramLabel = "filepath2",
+            paramLabel = "filePath2",
             description = "path to second file")
     private String filePath2;
 
@@ -46,7 +46,7 @@ final class App implements Callable<Integer> {
     public Integer call() throws IOException {
 
         try {
-            System.out.println("Differ.generate(filePath1, filePath2)");
+            System.out.println(Differ.generate(filePath1, filePath2, format));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
