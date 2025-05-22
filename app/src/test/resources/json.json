@@ -6,28 +6,28 @@
 }, {
   "status" : "CHANGED",
   "key" : "chars2",
-  "value" : [ "d", "e", "f" ],
-  "oldValue" : false
+  "value" : false,
+  "oldValue" : [ "d", "e", "f" ]
 }, {
   "status" : "CHANGED",
   "key" : "checked",
-  "value" : false,
-  "oldValue" : true
+  "value" : true,
+  "oldValue" : false
 }, {
   "status" : "CHANGED",
   "key" : "default",
-  "value" : null,
-  "oldValue" : [ "value1", "value2" ]
+  "value" : [ "value1", "value2" ],
+  "oldValue" : null
 }, {
   "status" : "CHANGED",
   "key" : "id",
-  "value" : 45,
-  "oldValue" : null
+  "value" : null,
+  "oldValue" : 45
 }, {
   "status" : "DELETED",
   "key" : "key1",
   "value" : "value1",
-  "oldValue" : "value1"
+  "oldValue" : null
 }, {
   "status" : "ADDED",
   "key" : "key2",
@@ -41,13 +41,13 @@
 }, {
   "status" : "CHANGED",
   "key" : "numbers2",
-  "value" : [ 2, 3, 4, 5 ],
-  "oldValue" : [ 22, 33, 44, 55 ]
+  "value" : [ 22, 33, 44, 55 ],
+  "oldValue" : [ 2, 3, 4, 5 ]
 }, {
   "status" : "DELETED",
   "key" : "numbers3",
   "value" : [ 3, 4, 5 ],
-  "oldValue" : [ 3, 4, 5 ]
+  "oldValue" : null
 }, {
   "status" : "ADDED",
   "key" : "numbers4",
@@ -64,16 +64,16 @@
 }, {
   "status" : "CHANGED",
   "key" : "setting1",
-  "value" : "Some value",
-  "oldValue" : "Another value"
+  "value" : "Another value",
+  "oldValue" : "Some value"
 }, {
   "status" : "CHANGED",
   "key" : "setting2",
-  "value" : 200,
-  "oldValue" : 300
+  "value" : 300,
+  "oldValue" : 200
 }, {
   "status" : "CHANGED",
   "key" : "setting3",
-  "value" : true,
-  "oldValue" : "none"
+  "value" : "none",
+  "oldValue" : true
 } ]

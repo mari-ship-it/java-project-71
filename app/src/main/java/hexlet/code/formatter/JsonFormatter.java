@@ -14,6 +14,5 @@ public class JsonFormatter {
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
         return mapper.writeValueAsString(compareResult);
-
     }
 }

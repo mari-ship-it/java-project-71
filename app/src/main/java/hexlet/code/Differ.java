@@ -38,7 +38,7 @@ public class Differ {
 
     protected static String readFile(String fileName) throws IOException {
 
-        String namePath = "app/src/main/resources/" + fileName;
+        String namePath = "src/test/resources/" + fileName;
         Path path = Paths.get(namePath).toAbsolutePath().normalize();
         return Files.readString(path).trim();
     }
@@ -65,13 +65,13 @@ public class Differ {
                 result.add(new CompareResult(ADDED, key, value2, value1));
 
             } else if (!mapFile2.containsKey(key)) {
-                result.add(new CompareResult(DELETED, key, value1, value1));
+                result.add(new CompareResult(DELETED, key, value1, value2));
 
             } else if (mapFile1.get(key) != null && mapFile1.get(key).equals(mapFile2.get(key))) {
-                result.add(new CompareResult(UNCHANGED, key, value1, value2));
+                result.add(new CompareResult(UNCHANGED, key, value1, value1));
 
             } else {
-                result.add(new CompareResult(CHANGED, key, value1, value2));
+                result.add(new CompareResult(CHANGED, key, value2, value1));
             }
         });
         return result;

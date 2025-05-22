@@ -21,7 +21,7 @@ public class StylishFormatter {
             TypeStatus type = items.getStatus();
             String key = items.getKey();
             Object value = items.getValue();
-            Object oldValue = items.getValue();
+            Object oldValue = items.getOldValue();
 
             switch (type) {
                 case ADDED:
@@ -34,8 +34,8 @@ public class StylishFormatter {
                     buildString.append(UNCHANGED_PREFIX).append(key).append(SYMBOL).append(value).append("\n");
                     break;
                 case CHANGED:
-                    buildString.append(MINUS_PREFIX).append(key).append(SYMBOL).append(oldValue).append("\n")
-                                    .append(PLUS_PREFIX).append(key).append(SYMBOL).append(value).append("\n");
+                    buildString.append(MINUS_PREFIX).append(key).append(SYMBOL).append(oldValue).append("\n");
+                    buildString.append(PLUS_PREFIX).append(key).append(SYMBOL).append(value).append("\n");
                     break;
                 default:
             }
