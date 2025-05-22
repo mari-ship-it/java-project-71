@@ -38,7 +38,7 @@ public class Differ {
 
     protected static String readFile(String fileName) throws IOException {
 
-        String namePath = "src/test/resources/" + fileName;
+        String namePath = "app/src/test/resources/" + fileName;
         Path path = Paths.get(namePath).toAbsolutePath().normalize();
         return Files.readString(path).trim();
     }
