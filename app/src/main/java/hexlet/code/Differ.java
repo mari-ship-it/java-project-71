@@ -4,9 +4,15 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeSet;
 
-import static hexlet.code.TypeStatus.*;
+import static hexlet.code.TypeStatus.ADDED;
+import static hexlet.code.TypeStatus.CHANGED;
+import static hexlet.code.TypeStatus.UNCHANGED;
+import static hexlet.code.TypeStatus.DELETED;
 
 public class Differ {
 
@@ -62,7 +68,7 @@ public class Differ {
                 result.add(new CompareResult(DELETED, key, value1, value1));
 
             } else if (mapFile1.get(key) != null && mapFile1.get(key).equals(mapFile2.get(key))) {
-                result.add(new CompareResult(UNCHANGED,key, value1, value2));
+                result.add(new CompareResult(UNCHANGED, key, value1, value2));
 
             } else {
                 result.add(new CompareResult(CHANGED, key, value1, value2));

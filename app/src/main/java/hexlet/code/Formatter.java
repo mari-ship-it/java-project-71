@@ -6,7 +6,6 @@ import hexlet.code.formatter.PlainFormatter;
 import hexlet.code.formatter.StylishFormatter;
 
 import java.util.List;
-import java.util.Map;
 
 public class Formatter {
 

@@ -4,7 +4,6 @@ import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
-
 import java.io.IOException;
 import java.util.concurrent.Callable;
 
@@ -13,7 +12,6 @@ import java.util.concurrent.Callable;
         mixinStandardHelpOptions = true,
         sortOptions = false,
         description = "Compares two configuration files and shows a difference.")
-
 final class App implements Callable<Integer> {
 
     @Parameters(index = "0",
