@@ -15,50 +15,56 @@ class AppTest {
 
     @BeforeAll
     static void beforeAll() throws IOException {
-        expectedStylish = Differ.readFile("stylish.yaml");
-        expectedPlain = Differ.readFile("plain.yaml");
-        expectedJson = Differ.readFile("json.json");
+        expectedStylish = Differ.readFile("src/test/resources/fixtures/stylish.yaml");
+        expectedPlain = Differ.readFile("src/test/resources/fixtures/plain.yaml");
+        expectedJson = Differ.readFile("src/test/resources/fixtures/json.json");
     }
 
     @Test
     void testJsonWithStylishOutput() {
 
-        String actual = Differ.generate("file1.json", "file2.json");
+        String actual = Differ.generate("src/test/resources/fixtures/file1.json",
+                "src/test/resources/fixtures/file2.json");
         assertEquals(expectedStylish, actual);
     }
 
     @Test
     void testWithStylishOutput() {
 
-        String actual2 = Differ.generate("file1.yaml", "file2.yaml");
+        String actual2 = Differ.generate("src/test/resources/fixtures/file1.yaml",
+                "src/test/resources/fixtures/file2.yaml");
         assertEquals(expectedStylish, actual2);
     }
 
     @Test
     void testJsonWithPlainOutput() {
 
-        String actual = Differ.generate("file1.json", "file2.json", "plain");
+        String actual = Differ.generate("src/test/resources/fixtures/file1.json",
+                "src/test/resources/fixtures/file2.json", "plain");
         assertEquals(expectedPlain, actual);
     }
 
     @Test
     void testYamlWithPlainOutput() {
 
-        String actual = Differ.generate("file1.yaml", "file2.yaml", "plain");
+        String actual = Differ.generate("src/test/resources/fixtures/file1.yaml",
+                "src/test/resources/fixtures/file2.yaml", "plain");
         assertEquals(expectedPlain, actual);
     }
 
     @Test
     void testJsonWithJsonOutput() {
 
-        String actual = Differ.generate("file1.json", "file2.json", "json");
+        String actual = Differ.generate("src/test/resources/fixtures/file1.json",
+                "src/test/resources/fixtures/file2.json", "json");
         assertEquals(expectedJson, actual);
     }
 
     @Test
     void testYamlWithJsonOutput() {
 
-        String actual = Differ.generate("file1.yaml", "file2.yaml", "json");
+        String actual = Differ.generate("src/test/resources/fixtures/file1.yaml",
+                "src/test/resources/fixtures/file2.yaml", "json");
         assertEquals(expectedJson, actual);
     }
 }
