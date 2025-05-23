@@ -27,6 +27,9 @@ report:
 checkstyleMain:
 	./gradlew checkstyleMain
 
+sonar:
+	./gradlew build sonar --info
+
 update-deps:
 	./gradlew refreshVersions
 	# ./gradlew dependencyUpdates -Drevision=release
