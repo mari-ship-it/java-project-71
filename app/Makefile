@@ -30,9 +30,8 @@ checkstyleMain:
 sonar:
 	./gradlew build sonar --info
 
-update-deps:
+update-deeps:
 	./gradlew refreshVersions
-	# ./gradlew dependencyUpdates -Drevision=release
 
 
 build-run: build run

@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class Parser {
 
-    public static Map<String, Object> parse(String content, String format) throws Exception {
+    public static Map<String, Object> parse(String content, String format) throws  Exception{
 
         ObjectMapper mapper = switch (format) {
             case "yaml", "yml" -> new YAMLMapper();

@@ -30,6 +30,7 @@ public class PlainFormatter {
                 case TypeStatus.CHANGED:
                     stringBuilder.append("Property '").append(key).append("' was updated. From ")
                             .append(oldValue).append(" to ").append(value).append("\n");
+                    break;
                 case TypeStatus.UNCHANGED:
                     break;
                 default: throw new RuntimeException();

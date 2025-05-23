@@ -14,49 +14,49 @@ class AppTest {
     private static String expectedJson;
 
     @BeforeAll
-    public static void beforeAll() throws IOException {
+    static void beforeAll() throws IOException {
         expectedStylish = Differ.readFile("stylish.yaml");
         expectedPlain = Differ.readFile("plain.yaml");
         expectedJson = Differ.readFile("json.json");
     }
 
     @Test
-    public void testJsonWithStylishOutput() throws Exception {
+    void testJsonWithStylishOutput() throws Exception {
 
         String actual = Differ.generate("file1.json", "file2.json");
         assertEquals(expectedStylish, actual);
     }
 
     @Test
-    public void testYamlWithStylishOutput() throws Exception {
+    void testYamlWithStylishOutput() throws Exception {
 
         String actual2 = Differ.generate("file1.yaml", "file2.yaml");
         assertEquals(expectedStylish, actual2);
     }
 
     @Test
-    public void testJsonWithPlainOutput() throws Exception {
+    void testJsonWithPlainOutput() throws Exception {
 
         String actual = Differ.generate("file1.json", "file2.json", "plain");
         Assertions.assertEquals(expectedPlain, actual);
     }
 
     @Test
-    public void testYamlWithPlainOutput() throws Exception {
+    void testYamlWithPlainOutput() throws Exception {
 
         String actual = Differ.generate("file1.yaml", "file2.yaml", "plain");
         Assertions.assertEquals(expectedPlain, actual);
     }
 
     @Test
-    public void testJsonWithJsonOutput() throws Exception {
+    void testJsonWithJsonOutput() throws Exception {
 
         String actual = Differ.generate("file1.json", "file2.json", "json");
         assertEquals(expectedJson, actual);
     }
 
     @Test
-    public void testYamlWithJsonOutput() throws Exception {
+    void testYamlWithJsonOutput() throws Exception {
 
         String actual = Differ.generate("file1.yaml", "file2.yaml", "json");
         assertEquals(expectedJson, actual);
