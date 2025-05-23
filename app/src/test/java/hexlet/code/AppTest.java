@@ -1,10 +1,10 @@
 package hexlet.code;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AppTest {
@@ -21,42 +21,42 @@ class AppTest {
     }
 
     @Test
-    void testJsonWithStylishOutput() throws Exception {
+    void testJsonWithStylishOutput() {
 
         String actual = Differ.generate("file1.json", "file2.json");
         assertEquals(expectedStylish, actual);
     }
 
     @Test
-    void testYamlWithStylishOutput() throws Exception {
+    void testWithStylishOutput() {
 
         String actual2 = Differ.generate("file1.yaml", "file2.yaml");
         assertEquals(expectedStylish, actual2);
     }
 
     @Test
-    void testJsonWithPlainOutput() throws Exception {
+    void testJsonWithPlainOutput() {
 
         String actual = Differ.generate("file1.json", "file2.json", "plain");
-        Assertions.assertEquals(expectedPlain, actual);
+        assertEquals(expectedPlain, actual);
     }
 
     @Test
-    void testYamlWithPlainOutput() throws Exception {
+    void testYamlWithPlainOutput() {
 
         String actual = Differ.generate("file1.yaml", "file2.yaml", "plain");
-        Assertions.assertEquals(expectedPlain, actual);
+        assertEquals(expectedPlain, actual);
     }
 
     @Test
-    void testJsonWithJsonOutput() throws Exception {
+    void testJsonWithJsonOutput() {
 
         String actual = Differ.generate("file1.json", "file2.json", "json");
         assertEquals(expectedJson, actual);
     }
 
     @Test
-    void testYamlWithJsonOutput() throws Exception {
+    void testYamlWithJsonOutput() {
 
         String actual = Differ.generate("file1.yaml", "file2.yaml", "json");
         assertEquals(expectedJson, actual);
