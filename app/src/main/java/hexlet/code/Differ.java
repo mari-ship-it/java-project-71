@@ -16,11 +16,17 @@ import static hexlet.code.TypeStatus.DELETED;
 
 public class Differ {
 
-    public static String generate(String filePath1, String filePath2, String format) throws Exception {
+    public static String generate(String filePath1, String filePath2, String format) {
 
-        String contentFile1 = readFile(filePath1);
-        String contentFile2 = readFile(filePath2);
+        String contentFile1;
+        String contentFile2;
 
+        try {
+            contentFile1 = readFile(filePath1);
+            contentFile2 = readFile(filePath2);
+        } catch (IOException e) {
+            throw new RuntimeException("Ошибка ввода-вывода при чтении файлов");
+        }
         String formatFile1 = getFileFormat(filePath1);
         String formatFile2 = getFileFormat(filePath2);
 
@@ -32,7 +38,7 @@ public class Differ {
         return Formatter.format(compareResult, format);
     }
 
-    public static String generate(String filePath1, String filePath2) throws Exception {
+    public static String generate(String filePath1, String filePath2) {
         return generate(filePath1, filePath2, "stylish");
     }
 

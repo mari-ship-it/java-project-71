@@ -9,10 +9,16 @@ import java.util.List;
 
 public class JsonFormatter {
 
-    public static String format(List<CompareResult> compareResult) throws JsonProcessingException {
+    public static String format(List<CompareResult> compareResult) {
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
-        return mapper.writeValueAsString(compareResult);
+
+        try {
+
+            return mapper.writeValueAsString(compareResult);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("Ошибка обработки JSON");
+        }
     }
 }

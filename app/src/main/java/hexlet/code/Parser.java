@@ -7,13 +7,19 @@ import java.util.Map;
 
 public class Parser {
 
-    public static Map<String, Object> parse(String content, String format) throws  Exception {
+    public static Map<String, Object> parse(String content, String format) {
 
         ObjectMapper mapper = switch (format) {
             case "yaml", "yml" -> new YAMLMapper();
             case "json" -> new ObjectMapper();
             default -> throw new IllegalStateException("Unexpected value: " + format);
         };
-        return mapper.readValue(content, new TypeReference<>() { });
+
+        try {
+            return mapper.readValue(content, new TypeReference<>() {
+            });
+        } catch (Exception e) {
+            throw new IllegalStateException("Ошибка при парсинге данных");
+        }
     }
 }
