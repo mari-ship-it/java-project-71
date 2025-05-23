@@ -8,6 +8,8 @@ import java.util.Map;
 
 public class PlainFormatter {
 
+    private static final String PROPERTY = "Property '";
+
     public static String format(List<CompareResult> compareResult) {
 
         StringBuilder stringBuilder = new StringBuilder();
@@ -21,14 +23,14 @@ public class PlainFormatter {
 
             switch (type) {
                 case TypeStatus.ADDED:
-                    stringBuilder.append("Property '").append(key).append("' was added with value: ")
+                    stringBuilder.append(PROPERTY).append(key).append("' was added with value: ")
                             .append(value).append("\n");
                     break;
                 case TypeStatus.DELETED:
-                    stringBuilder.append("Property '").append(key).append("' was removed").append("\n");
+                    stringBuilder.append(PROPERTY).append(key).append("' was removed").append("\n");
                     break;
                 case TypeStatus.CHANGED:
-                    stringBuilder.append("Property '").append(key).append("' was updated. From ")
+                    stringBuilder.append(PROPERTY).append(key).append("' was updated. From ")
                             .append(oldValue).append(" to ").append(value).append("\n");
                     break;
                 case TypeStatus.UNCHANGED:
