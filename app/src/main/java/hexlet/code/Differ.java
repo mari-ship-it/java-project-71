@@ -25,7 +25,7 @@ public class Differ {
             contentFile1 = readFile(filePath1);
             contentFile2 = readFile(filePath2);
         } catch (IOException e) {
-            throw new RuntimeException("Ошибка ввода-вывода при чтении файлов");
+            throw new IllegalStateException("Ошибка ввода-вывода при чтении файлов");
         }
         String formatFile1 = getFileFormat(filePath1);
         String formatFile2 = getFileFormat(filePath2);
