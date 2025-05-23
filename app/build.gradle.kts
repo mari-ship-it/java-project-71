@@ -18,12 +18,17 @@ repositories {
     mavenCentral()
 }
 
+val jacksonVersion = "2.18.3"
+val picocliVersion = "4.7.6"
+val junitPlatformVersion = "5.10.0"
+val junitVersion = "5.9.2"
+
 dependencies {
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.18.3")
-    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.18.3")
-    implementation("info.picocli:picocli:4.7.6")
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
+    implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
+    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:$jacksonVersion")
+    implementation("info.picocli:picocli:$picocliVersion")
+    testImplementation(platform("org.junit:junit-bom:$junitPlatformVersion"))
+    testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
