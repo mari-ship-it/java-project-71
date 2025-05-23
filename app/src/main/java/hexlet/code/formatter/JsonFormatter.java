@@ -13,7 +13,6 @@ public class JsonFormatter {
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
-
         try {
 
             return mapper.writeValueAsString(compareResult);
