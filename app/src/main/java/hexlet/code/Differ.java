@@ -49,7 +49,6 @@ public class Differ {
     }
 
     private static String getFileFormat(String fileName) {
-        //возвращает расширение файла (json, yml, yaml)
         String[] items = fileName.split("\\.");
         return items[items.length - 1];
     }
