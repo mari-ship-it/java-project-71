@@ -7,8 +7,8 @@ import lombok.Getter;
 @AllArgsConstructor
 public class CompareResult {
 
-    TypeStatus status;
-    String key;
-    Object value;
-    Object oldValue;
+    private TypeStatus status;
+    private String key;
+    private Object value;
+    private Object oldValue;
 }
