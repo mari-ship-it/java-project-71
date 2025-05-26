@@ -14,7 +14,6 @@ public class JsonFormatter {
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
         try {
-
             return mapper.writeValueAsString(compareResult);
         } catch (JsonProcessingException e) {
             throw new RuntimeException("Ошибка обработки JSON");
