@@ -7,7 +7,11 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 
-public class Differ {
+public final class Differ {
+
+    private Differ() {
+        throw new IllegalStateException("Differ class cannot be instantiated");
+    }
 
     public static String generate(String filePath1, String filePath2, String format) {
 

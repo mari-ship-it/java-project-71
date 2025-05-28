@@ -7,7 +7,11 @@ import hexlet.code.CompareResult;
 
 import java.util.List;
 
-public class JsonFormatter {
+public final class JsonFormatter {
+
+    private JsonFormatter() {
+        throw new IllegalStateException("JsonFormatter class cannot be instantiated");
+    }
 
     public static String format(List<CompareResult> compareResult) {
 

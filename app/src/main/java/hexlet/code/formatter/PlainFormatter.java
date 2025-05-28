@@ -6,7 +6,11 @@ import hexlet.code.TypeStatus;
 import java.util.List;
 import java.util.Map;
 
-public class PlainFormatter {
+public final class PlainFormatter {
+
+    private PlainFormatter() {
+        throw new IllegalStateException("PlainFormatter class cannot be instantiated");
+    }
 
     private static final String PROPERTY = "Property '";
 

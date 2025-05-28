@@ -5,9 +5,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import java.util.Map;
 
-class Parser {
+final class Parser {
 
-    protected static Map<String, Object> parse(String content, String format) {
+    private Parser() {
+        throw new IllegalStateException("Parser class cannot be instantiated");
+    }
+
+    static Map<String, Object> parse(String content, String format) {
 
         ObjectMapper mapper = switch (format) {
             case "yaml", "yml" -> new YAMLMapper();

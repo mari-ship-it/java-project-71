@@ -10,9 +10,13 @@ import static hexlet.code.TypeStatus.DELETED;
 import static hexlet.code.TypeStatus.UNCHANGED;
 import static hexlet.code.TypeStatus.CHANGED;
 
-class Compare {
+final class Compare {
 
-    protected static List<CompareResult> compare(Map<String, Object> mapFile1, Map<String, Object> mapFile2) {
+    private Compare() {
+        throw new IllegalStateException("Compare class cannot be instantiated");
+    }
+
+    static List<CompareResult> compare(Map<String, Object> mapFile1, Map<String, Object> mapFile2) {
 
         LinkedList<CompareResult> result = new LinkedList<>();
         var keys = new TreeSet<>(mapFile1.keySet());

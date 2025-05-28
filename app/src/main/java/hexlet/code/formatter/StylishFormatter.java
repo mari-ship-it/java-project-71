@@ -5,7 +5,11 @@ import hexlet.code.TypeStatus;
 
 import java.util.List;
 
-public class StylishFormatter {
+public final class StylishFormatter {
+
+    private StylishFormatter() {
+        throw new IllegalStateException("StylishFormatter class cannot be instantiated");
+    }
 
     private static final String PLUS_PREFIX = "  + ";
     private static final String MINUS_PREFIX = "  - ";

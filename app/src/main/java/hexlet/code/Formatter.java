@@ -6,9 +6,13 @@ import hexlet.code.formatter.StylishFormatter;
 
 import java.util.List;
 
-class Formatter {
+final class Formatter {
 
-    protected static String format(List<CompareResult> compareResult, String format) {
+    private Formatter() {
+        throw new IllegalStateException("Formatter class cannot be instantiated");
+    }
+
+    static String format(List<CompareResult> compareResult, String format) {
 
         return switch (format) {
             case "stylish" -> StylishFormatter.format(compareResult);
