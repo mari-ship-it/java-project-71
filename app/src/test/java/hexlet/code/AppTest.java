@@ -73,8 +73,7 @@ class AppTest {
     }
 
     @Test
-    void testExceptionReadFile() {
-        assertThrows(IllegalArgumentException.class, () -> Differ.readFile(" "));
+    void testException() {
+        assertThrows(IllegalArgumentException.class, () -> Differ.generate("", ""));
     }
-
 }
