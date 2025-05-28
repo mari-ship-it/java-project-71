@@ -9,6 +9,6 @@ public class CompareResult {
 
     private TypeStatus status;
     private String key;
-    private Object value;
-    private Object oldValue;
+    private Object value1;
+    private Object value2;
 }

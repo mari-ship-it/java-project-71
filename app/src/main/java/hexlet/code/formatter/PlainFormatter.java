@@ -18,8 +18,8 @@ public class PlainFormatter {
 
             TypeStatus type  = items.getStatus();
             String key = items.getKey();
-            Object value = isCondition(items.getValue());
-            Object oldValue = isCondition(items.getOldValue());
+            Object value = isCondition(items.getValue1());
+            Object oldValue = isCondition(items.getValue2());
 
             switch (type) {
                 case TypeStatus.ADDED:

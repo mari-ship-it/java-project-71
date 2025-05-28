@@ -20,8 +20,8 @@ public class StylishFormatter {
 
             TypeStatus type = items.getStatus();
             String key = items.getKey();
-            Object value = items.getValue();
-            Object oldValue = items.getOldValue();
+            Object value = items.getValue1();
+            Object oldValue = items.getValue2();
 
             switch (type) {
                 case ADDED:
