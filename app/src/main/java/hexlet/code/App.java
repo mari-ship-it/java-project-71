@@ -33,7 +33,7 @@ final class App implements Callable<Integer> {
         try {
             System.out.println(Differ.generate(filePath1, filePath2, format));
         } catch (Exception e) {
-            throw new IllegalArgumentException("Ошибка при сравнении файлов.");
+            throw new IllegalArgumentException("Не удалось выполнить сравнение файлов");
         }
         return 0;
     }

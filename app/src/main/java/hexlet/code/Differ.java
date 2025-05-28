@@ -9,17 +9,14 @@ import java.util.Map;
 
 public class Differ {
 
-    public static String generate(String filePath1, String filePath2, String format) {
+    protected static String generate(String filePath1, String filePath2, String format) {
 
         String contentFile1;
         String contentFile2;
 
-        try {
-            contentFile1 = readFile(filePath1);
-            contentFile2 = readFile(filePath2);
-        } catch (IOException e) {
-            throw new IllegalStateException("Ошибка ввода-вывода при чтении файлов");
-        }
+        contentFile1 = readFile(filePath1);
+        contentFile2 = readFile(filePath2);
+
         String formatFile1 = getFileFormat(filePath1);
         String formatFile2 = getFileFormat(filePath2);
 
@@ -31,14 +28,17 @@ public class Differ {
         return Formatter.format(compareResult, format);
     }
 
-    public static String generate(String filePath1, String filePath2) {
+    protected static String generate(String filePath1, String filePath2) {
         return generate(filePath1, filePath2, "stylish");
     }
 
-    protected static String readFile(String fileName) throws IOException {
-
-        Path path = Paths.get(fileName).toAbsolutePath().normalize();
-        return Files.readString(path).trim();
+    private static String readFile(String fileName) {
+        try {
+            Path path = Paths.get(fileName).toAbsolutePath().normalize();
+            return Files.readString(path).trim();
+        } catch (IOException e) {
+            throw new RuntimeException("Ошибка при чтении файлов");
+        }
     }
 
     private static String getFileFormat(String fileName) {

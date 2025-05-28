@@ -6,9 +6,9 @@ import hexlet.code.formatter.StylishFormatter;
 
 import java.util.List;
 
-public class Formatter {
+class Formatter {
 
-    public static String format(List<CompareResult> compareResult, String format) {
+    protected static String format(List<CompareResult> compareResult, String format) {
 
         return switch (format) {
             case "stylish" -> StylishFormatter.format(compareResult);
