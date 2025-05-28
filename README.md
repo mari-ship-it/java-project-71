@@ -48,7 +48,6 @@ make lint
 
 - https://asciinema.org/a/QfHITuOsLn2jI7XtdNw7ilbfQ
 
-### Example of using json input format:
+### Example of using the json input format:
 
 - https://asciinema.org/a/GituCRHPCQZWSIs14DDLkbWXi
-
