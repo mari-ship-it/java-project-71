@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class Differ {
 
-    protected static String generate(String filePath1, String filePath2, String format) {
+    public static String generate(String filePath1, String filePath2, String format) {
 
         String contentFile1;
         String contentFile2;
@@ -28,7 +28,7 @@ public class Differ {
         return Formatter.format(compareResult, format);
     }
 
-    protected static String generate(String filePath1, String filePath2) {
+    public static String generate(String filePath1, String filePath2) {
         return generate(filePath1, filePath2, "stylish");
     }
 
