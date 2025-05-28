@@ -24,7 +24,7 @@ test:
 report:
 	./gradlew jacocoTestReport
 
-checkstyleMain:
+lint:
 	./gradlew checkstyleMain
 
 sonar:

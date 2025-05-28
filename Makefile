@@ -7,5 +7,8 @@ report:
 test:
 	make -C app test
 
-checkstyleMain:
+lint:
 	make -C app checkstyleMain
+
+sonar:
+	make -C app sonar
