@@ -16,7 +16,7 @@ public class JsonFormatter {
         try {
             return mapper.writeValueAsString(compareResult);
         } catch (JsonProcessingException e) {
-            throw new RuntimeException("Ошибка обработки JSON");
+            throw new IllegalArgumentException("Ошибка обработки JSON: " + e.getMessage(), e);
         }
     }
 }

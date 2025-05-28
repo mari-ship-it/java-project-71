@@ -37,7 +37,8 @@ public class Differ {
             Path path = Paths.get(fileName).toAbsolutePath().normalize();
             return Files.readString(path).trim();
         } catch (IOException e) {
-            throw new RuntimeException("Ошибка при чтении файлов");
+            throw new IllegalArgumentException("Ошибка при чтении файла: " + fileName + ". Причина: "
+                    + e.getMessage(), e);
         }
     }
 

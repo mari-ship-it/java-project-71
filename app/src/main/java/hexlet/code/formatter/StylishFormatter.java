@@ -37,7 +37,7 @@ public class StylishFormatter {
                     buildString.append(MINUS_PREFIX).append(key).append(SYMBOL).append(oldValue).append("\n");
                     buildString.append(PLUS_PREFIX).append(key).append(SYMBOL).append(value).append("\n");
                     break;
-                default:
+                default: throw new IllegalArgumentException("Unknown status type: " + type);
             }
         });
         buildString.append("}");

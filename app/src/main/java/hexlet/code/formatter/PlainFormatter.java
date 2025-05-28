@@ -35,7 +35,7 @@ public class PlainFormatter {
                     break;
                 case TypeStatus.UNCHANGED:
                     break;
-                default: throw new RuntimeException();
+                default: throw new IllegalArgumentException("Unknown status type: " + type);
             }
         });
         return stringBuilder.toString().trim();

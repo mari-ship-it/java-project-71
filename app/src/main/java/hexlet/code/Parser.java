@@ -19,7 +19,7 @@ class Parser {
             return mapper.readValue(content, new TypeReference<>() {
             });
         } catch (Exception e) {
-            throw new IllegalStateException("Ошибка при парсинге данных");
+            throw new IllegalStateException("Ошибка при парсинге данных. Причина: " + e.getMessage(), e);
         }
     }
 }
