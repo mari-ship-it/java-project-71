@@ -36,7 +36,7 @@ public final class Differ {
         return generate(filePath1, filePath2, "stylish");
     }
 
-    private static String readFile(String fileName) {
+    static String readFile(String fileName) {
         try {
             Path path = Paths.get(fileName).toAbsolutePath().normalize();
             return Files.readString(path).trim();
