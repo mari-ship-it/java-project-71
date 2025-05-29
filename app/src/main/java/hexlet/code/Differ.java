@@ -10,7 +10,6 @@ import java.util.Map;
 public final class Differ {
 
     public static String generate(String filePath1, String filePath2, String format) {
-
         String contentFile1;
         String contentFile2;
 
@@ -24,7 +23,6 @@ public final class Differ {
         Map<String, Object> mapFile2 = Parser.parse(contentFile2, formatFile2);
 
         List<CompareResult> compareResult = Compare.compare(mapFile1, mapFile2);
-
         return Formatter.format(compareResult, format);
     }
 

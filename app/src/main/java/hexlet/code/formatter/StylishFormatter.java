@@ -41,7 +41,6 @@ public final class StylishFormatter {
             }
         });
         buildString.append("}");
-
         return buildString.toString();
     }
 }

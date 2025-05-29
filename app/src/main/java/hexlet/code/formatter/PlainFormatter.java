@@ -11,16 +11,13 @@ public final class PlainFormatter {
     private static final String PROPERTY = "Property '";
 
     public static String format(List<CompareResult> compareResult) {
-
         StringBuilder stringBuilder = new StringBuilder();
-
         compareResult.forEach(items -> {
 
             TypeStatus type  = items.getStatus();
             String key = items.getKey();
             Object value = isCondition(items.getValue1());
             Object oldValue = isCondition(items.getValue2());
-
             switch (type) {
                 case TypeStatus.ADDED:
                     stringBuilder.append(PROPERTY).append(key).append("' was added with value: ")

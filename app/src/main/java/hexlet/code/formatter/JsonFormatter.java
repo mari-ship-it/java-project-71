@@ -10,7 +10,6 @@ import java.util.List;
 public final class JsonFormatter {
 
     public static String format(List<CompareResult> compareResult) {
-
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
         try {
