@@ -19,12 +19,14 @@ class AppTest {
     private static final String PATH_TO_FILE = "src/test/resources/fixtures/";
 
     private static String readFileTest(String fileName) throws IOException {
+
         Path path = Paths.get(PATH_TO_FILE + fileName).toAbsolutePath().normalize();
         return Files.readString(path).trim();
     }
 
     @BeforeAll
     static void beforeAll() throws IOException {
+
         expectedStylish = readFileTest("stylish.yaml");
         expectedPlain = readFileTest("plain.yaml");
         expectedJson = readFileTest("json.json");
@@ -33,6 +35,7 @@ class AppTest {
     @ParameterizedTest
     @ValueSource(strings = {"json", "yaml"})
     void testDefaultOutput(String inputFormat) {
+
         String file1 = PATH_TO_FILE + "file1." + inputFormat;
         String file2 = PATH_TO_FILE + "file2." + inputFormat;
         String actual = Differ.generate(file1, file2);
@@ -42,6 +45,7 @@ class AppTest {
     @ParameterizedTest
     @ValueSource(strings = {"json", "yaml"})
     void testPlainOutput(String inputFormat) {
+
         String file1 = PATH_TO_FILE + "file1." + inputFormat;
         String file2 = PATH_TO_FILE + "file2." + inputFormat;
         String actual = Differ.generate(file1, file2, "plain");
@@ -51,6 +55,7 @@ class AppTest {
     @ParameterizedTest
     @ValueSource(strings = {"json", "yaml"})
     void testJsonOutput(String inputFormat) {
+
         String file1 = PATH_TO_FILE + "file1." + inputFormat;
         String file2 = PATH_TO_FILE + "file2." + inputFormat;
         String actual = Differ.generate(file1, file2, "json");
@@ -60,6 +65,7 @@ class AppTest {
     @ParameterizedTest
     @ValueSource(strings = {"json", "yaml"})
     void testStylishOutput(String inputFormat) {
+
         String file1 = PATH_TO_FILE + "file1." + inputFormat;
         String file2 = PATH_TO_FILE + "file2." + inputFormat;
         String actual = Differ.generate(file1, file2, "stylish");

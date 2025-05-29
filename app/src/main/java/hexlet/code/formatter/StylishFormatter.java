@@ -16,6 +16,7 @@ public final class StylishFormatter {
 
         StringBuilder buildString = new StringBuilder();
         buildString.append("{\n");
+
         compareResult.forEach(items -> {
 
             TypeStatus type = items.getStatus();

@@ -10,6 +10,7 @@ import java.util.Map;
 public final class Differ {
 
     public static String generate(String filePath1, String filePath2, String format) {
+
         String contentFile1;
         String contentFile2;
 
@@ -31,6 +32,7 @@ public final class Differ {
     }
 
     static String readFile(String fileName) {
+
         try {
             Path path = Paths.get(fileName).toAbsolutePath().normalize();
             return Files.readString(path).trim();
@@ -41,6 +43,7 @@ public final class Differ {
     }
 
     private static String getFileFormat(String fileName) {
+
         String[] items = fileName.split("\\.");
         return items[items.length - 1];
     }

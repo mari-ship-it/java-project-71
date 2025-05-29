@@ -14,6 +14,7 @@ final class Parser {
             case "json" -> new ObjectMapper();
             default -> throw new IllegalStateException("Unexpected value: " + format);
         };
+
         try {
             return mapper.readValue(content, new TypeReference<>() {
             });

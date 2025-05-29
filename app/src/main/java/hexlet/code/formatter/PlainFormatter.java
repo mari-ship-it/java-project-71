@@ -11,6 +11,7 @@ public final class PlainFormatter {
     private static final String PROPERTY = "Property '";
 
     public static String format(List<CompareResult> compareResult) {
+
         StringBuilder stringBuilder = new StringBuilder();
         compareResult.forEach(items -> {
 
@@ -18,6 +19,7 @@ public final class PlainFormatter {
             String key = items.getKey();
             Object value = isCondition(items.getValue1());
             Object oldValue = isCondition(items.getValue2());
+
             switch (type) {
                 case TypeStatus.ADDED:
                     stringBuilder.append(PROPERTY).append(key).append("' was added with value: ")
@@ -39,6 +41,7 @@ public final class PlainFormatter {
     }
 
     public static Object isCondition(Object value) {
+
         if (value instanceof Map || value instanceof List) {
             value = "[complex value]";
         } else if (value instanceof String) {
