@@ -7,10 +7,6 @@ import java.util.Map;
 
 final class Parser {
 
-    private Parser() {
-        throw new IllegalStateException("Parser class cannot be instantiated");
-    }
-
     static Map<String, Object> parse(String content, String format) {
 
         ObjectMapper mapper = switch (format) {

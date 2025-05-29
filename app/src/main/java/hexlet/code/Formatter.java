@@ -8,10 +8,6 @@ import java.util.List;
 
 final class Formatter {
 
-    private Formatter() {
-        throw new IllegalStateException("Formatter class cannot be instantiated");
-    }
-
     static String format(List<CompareResult> compareResult, String format) {
 
         return switch (format) {

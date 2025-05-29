@@ -8,10 +8,6 @@ import java.util.Map;
 
 public final class PlainFormatter {
 
-    private PlainFormatter() {
-        throw new IllegalStateException("PlainFormatter class cannot be instantiated");
-    }
-
     private static final String PROPERTY = "Property '";
 
     public static String format(List<CompareResult> compareResult) {

@@ -9,10 +9,6 @@ import java.util.Map;
 
 public final class Differ {
 
-    private Differ() {
-        throw new IllegalStateException("Differ class cannot be instantiated");
-    }
-
     public static String generate(String filePath1, String filePath2, String format) {
 
         String contentFile1;

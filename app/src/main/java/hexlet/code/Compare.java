@@ -12,10 +12,6 @@ import static hexlet.code.TypeStatus.CHANGED;
 
 final class Compare {
 
-    private Compare() {
-        throw new IllegalStateException("Compare class cannot be instantiated");
-    }
-
     static List<CompareResult> compare(Map<String, Object> mapFile1, Map<String, Object> mapFile2) {
 
         LinkedList<CompareResult> result = new LinkedList<>();
