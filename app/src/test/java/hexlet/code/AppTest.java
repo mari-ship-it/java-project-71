@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -10,6 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AppTest {
 
@@ -70,5 +72,11 @@ class AppTest {
         String file2 = PATH_TO_FILE + "file2." + inputFormat;
         String actual = Differ.generate(file1, file2, "stylish");
         assertEquals(expectedStylish, actual);
+    }
+
+    @Test
+    void testException() {
+
+        assertThrows(IllegalArgumentException.class, () -> Differ.generate("", "", "stylish"));
     }
 }
