@@ -14,7 +14,7 @@ final class Compare {
 
     static List<CompareResult> compare(Map<String, Object> mapFile1, Map<String, Object> mapFile2) {
 
-        LinkedList<CompareResult> result = new LinkedList<>();
+        List<CompareResult> result = new LinkedList<>();
         var keys = new TreeSet<>(mapFile1.keySet());
         keys.addAll(mapFile2.keySet());
 
