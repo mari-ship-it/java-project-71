@@ -12,6 +12,9 @@ import java.util.concurrent.Callable;
 
 final class App implements Callable<Integer> {
 
+    private static final int SUCCESS_EXIT_CODE = 0;
+    private static final int ERROR_EXIT_CODE = 1;
+
     @Parameters(index = "0", paramLabel = "filePath1", description = "path to first file")
     private String filePath1;
 
@@ -33,10 +36,10 @@ final class App implements Callable<Integer> {
         try {
             System.out.println(Differ.generate(filePath1, filePath2, format));
         } catch (Exception e) {
-            throw new IllegalArgumentException("Не удалось выполнить сравнение файлов: " + filePath1 + " и "
-                    + filePath2 + ". Причина: " + e.getMessage(), e);
+            System.err.println(e.getMessage());
+            return ERROR_EXIT_CODE;
         }
-        return 0;
+        return SUCCESS_EXIT_CODE;
     }
 
     public static void main(String[] args) {

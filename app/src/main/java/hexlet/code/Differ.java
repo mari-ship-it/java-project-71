@@ -9,7 +9,7 @@ import java.util.Map;
 
 public final class Differ {
 
-    public static String generate(String filePath1, String filePath2, String format) {
+    public static String generate(String filePath1, String filePath2, String format) throws IOException {
 
         String contentFile1;
         String contentFile2;
@@ -27,19 +27,14 @@ public final class Differ {
         return Formatter.format(compareResult, format);
     }
 
-    public static String generate(String filePath1, String filePath2) {
+    public static String generate(String filePath1, String filePath2) throws IOException {
         return generate(filePath1, filePath2, "stylish");
     }
 
-    static String readFile(String fileName) {
+    static String readFile(String fileName) throws IOException {
 
-        try {
-            Path path = Paths.get(fileName).toAbsolutePath().normalize();
-            return Files.readString(path).trim();
-        } catch (IOException e) {
-            throw new IllegalArgumentException("Ошибка при чтении файла: " + fileName + ". Причина: "
-                    + e.getMessage(), e);
-        }
+        Path path = Paths.get(fileName).toAbsolutePath().normalize();
+        return Files.readString(path).trim();
     }
 
     private static String getFileFormat(String fileName) {

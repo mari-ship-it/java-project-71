@@ -9,15 +9,10 @@ import java.util.List;
 
 public final class JsonFormatter {
 
-    public static String format(List<CompareResult> compareResult) {
+    public static String format(List<CompareResult> compareResult) throws JsonProcessingException {
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
-
-        try {
-            return mapper.writeValueAsString(compareResult);
-        } catch (JsonProcessingException e) {
-            throw new IllegalArgumentException("Ошибка обработки JSON: " + e.getMessage(), e);
-        }
+        return mapper.writeValueAsString(compareResult);
     }
 }
