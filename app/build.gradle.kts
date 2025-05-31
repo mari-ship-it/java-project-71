@@ -41,7 +41,7 @@ tasks.jacocoTestReport { reports { xml.required.set(true) } }
 
 sonar {
     properties {
-        property("sonar.projectKey", "mari-ship-it_java-project-712")
+        property("sonar.projectKey", "mari-ship-it_java-project-71")
         property("sonar.organization", "mari-ship-it")
         property("sonar.host.url", "https://sonarcloud.io")
     }
