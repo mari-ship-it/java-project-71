@@ -11,19 +11,16 @@ public final class Differ {
 
     public static String generate(String filePath1, String filePath2, String format) throws IOException {
 
-        String contentFile1;
-        String contentFile2;
-
-        contentFile1 = readFile(filePath1);
-        contentFile2 = readFile(filePath2);
+        String firstContent = readFile(filePath1);
+        String secondContent = readFile(filePath2);
 
         String formatFile1 = getFileFormat(filePath1);
         String formatFile2 = getFileFormat(filePath2);
 
-        Map<String, Object> mapFile1 = Parser.parse(contentFile1, formatFile1);
-        Map<String, Object> mapFile2 = Parser.parse(contentFile2, formatFile2);
+        Map<String, Object> firstMap = Parser.parse(firstContent, formatFile1);
+        Map<String, Object> secondMap = Parser.parse(secondContent, formatFile2);
 
-        List<CompareResult> compareResult = Compare.compare(mapFile1, mapFile2);
+        List<CompareResult> compareResult = Comparator.compare(firstMap, secondMap);
         return Formatter.format(compareResult, format);
     }
 
